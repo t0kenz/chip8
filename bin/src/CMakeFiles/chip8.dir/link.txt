@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/chip8.dir/main.cc.o  -o chip8 
