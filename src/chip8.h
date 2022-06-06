@@ -62,7 +62,9 @@ class Chip8 {
     std::array<uint8_t, display_size> display;
 
     uint16_t program_counter;
+    uint16_t index_register;
     uint8_t stack_pointer;
+    
 
     uint8_t timer_delay;
     uint8_t sound_delay;

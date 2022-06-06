@@ -13,6 +13,10 @@ uint16_t Chip8::fetch_opcode() {
 
 void Chip8::execute_instruction(const uint16_t instruction) {
    // Potential issues: instruction might be 0, meaning we have reached the end or faulty program. 
+   //
+    switch(instruction) {
+
+    }
 }
 
 void Chip8::run_cycle() {
