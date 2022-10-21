@@ -44,21 +44,17 @@ class Chip8 {
     void load_program(const std::string& rom_path);
 
     void test() {
-      load_font();
       load_program("ibm_logo.ch8");
-      for (int i = 0x0; i < memory_size; i++) {
-        printf("%x", memory[i]);
-    }}
-
+    }
 
   private:
     static constexpr size_t memory_size = 4096;
     static constexpr size_t stack_depth = 12;
     static constexpr size_t display_size = 64 * 32;
 
-    std::array<uint8_t, memory_size> memory{};
-    std::array<uint8_t, stack_depth> stack{};
-    std::array<uint8_t, display_size> display{};
+    std::array<uint8_t, memory_size> memory;
+    std::array<uint8_t, stack_depth> stack;
+    std::array<uint8_t, display_size> display;
 
     uint16_t program_counter;
     uint16_t index_register;
@@ -67,6 +63,6 @@ class Chip8 {
     uint8_t timer_delay;
     uint8_t sound_delay;
 
-    std::array<uint8_t, 16> registers{};
+    std::array<uint8_t, 16> registers;
 };
 #endif
