@@ -1,5 +1,6 @@
 #include "chip8.h"
 #include <cstring>
+#include <algorithm>
 
 uint16_t Chip8::fetch_opcode() {
     // merge the opcode by shifting the first byte and then ORing the second.
@@ -15,6 +16,7 @@ void Chip8::execute_instruction(const uint16_t instruction) {
    // Potential issues: instruction might be 0, meaning we have reached the end or faulty program. 
    //
     switch(instruction) {
+        
 
     }
 }
@@ -28,7 +30,7 @@ void Chip8::run_cycle() {
 // According to the documentation, the convention is to put
 // all fonts in the memory region of 0x50-0x9F
 void Chip8::load_font() {
-    std::memset(memory, 0x50, sizeof memory); 
+    std::copy(font.begin(), font.end(), memory.begin());
 }
 
 

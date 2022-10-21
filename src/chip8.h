@@ -2,6 +2,7 @@
 #define CHIP_8_h
 
 #include <array>
+#include <iostream>
 
 // 16 general purpose 8-bit registers
 // opcode 16 bit length, 8 bit for instruction and 8 for operand.
@@ -36,20 +37,20 @@ class Chip8 {
     // program starts at address 0x200
     explicit Chip8() : program_counter(0x200)  {}
 
-    bool fetch_instruction();
+    uint16_t fetch_opcode();
     uint8_t decode_instruction();
-    uint8_t execute();
+    void execute_instruction(const uint16_t instruction);
     void run_cycle();
 
     void load_font();
 
     void test() {
-     /* std::cout << std::endl;
+      std::cout << std::endl;
       for (int i = 0; i < memory.size(); i++) {
         if (memory[i] != 0)
         std::cout << memory[i];
       }
-      */
+      
     }
 
   private:
