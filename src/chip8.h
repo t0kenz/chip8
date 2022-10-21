@@ -39,15 +39,11 @@ class Chip8 {
     uint16_t fetch_opcode();
     void execute_instruction(const uint16_t instruction);
     void run_cycle();
-
     void load_font();
+    void load_program(const std::string& rom_path);
 
     void test() {
-      std::cout << std::endl;
-      for (int i = 0; i < memory.size(); i++) {
-        if (memory[i] != 0)
-        std::cout << memory[i];
-      }
+
     }
 
   private:

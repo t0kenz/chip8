@@ -1,6 +1,10 @@
 #include "chip8.h"
-#include <cstring>
+#include "instructions.h"
+
 #include <algorithm>
+#include <fstream>
+#include <iterator>
+#include <string>
 
 uint16_t Chip8::fetch_opcode() {
     // merge the opcode by shifting the first byte and then ORing the second.
@@ -23,8 +27,23 @@ void Chip8::run_cycle() {
     execute_instruction(opcode);
 }
 
-// According to the documentation, the convention is to put
-// all fonts in the memory region of 0x50-0x9F
+
+
 void Chip8::load_font() {
+    // According to the documentation, the convention is to put
+    // all fonts in the memory region of 0x50-0x9F
     std::copy(font.begin(), font.end(), memory.begin() + 0x50);
+}
+
+void Chip8::load_program(const std::string& rom_path) {
+    std::ifstream rom(rom_path, std::ios::binary);
+    
+    if (!rom.good())
+        throw std::runtime_error("ROM couldn't be found\n");
+
+    uint32_t program_start_offset = 0x200;
+    while(rom.good()) {
+        // The &-operation is in place to stop the memory from overflowing.
+        memory[program_start_offset++ & 0xFFF] = rom.get();
+    }
 }
