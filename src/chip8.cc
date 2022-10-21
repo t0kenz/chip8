@@ -8,15 +8,12 @@ uint16_t Chip8::fetch_opcode() {
     // is placed on 2 different spaces.
     uint16_t opcode = memory[program_counter] << 8 | memory[program_counter + 1];
     return opcode;
-
-
 }
 
 void Chip8::execute_instruction(const uint16_t instruction) {
    // Potential issues: instruction might be 0, meaning we have reached the end or faulty program. 
    //
     switch(instruction) {
-        
 
     }
 }
@@ -26,11 +23,8 @@ void Chip8::run_cycle() {
     execute_instruction(opcode);
 }
 
-
 // According to the documentation, the convention is to put
 // all fonts in the memory region of 0x50-0x9F
 void Chip8::load_font() {
-    std::copy(font.begin(), font.end(), memory.begin());
+    std::copy(font.begin(), font.end(), memory.begin() + 0x50);
 }
-
-

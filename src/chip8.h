@@ -13,7 +13,6 @@
 
 class Chip8 {
   public:
-
     static constexpr std::array<uint8_t, 80> font = {
       0xF0, 0x90, 0x90, 0x90, 0xF0, // 0
       0x20, 0x60, 0x20, 0x20, 0x70, // 1
@@ -38,7 +37,6 @@ class Chip8 {
     explicit Chip8() : program_counter(0x200)  {}
 
     uint16_t fetch_opcode();
-    uint8_t decode_instruction();
     void execute_instruction(const uint16_t instruction);
     void run_cycle();
 
@@ -50,7 +48,6 @@ class Chip8 {
         if (memory[i] != 0)
         std::cout << memory[i];
       }
-      
     }
 
   private:
@@ -65,12 +62,10 @@ class Chip8 {
     uint16_t program_counter;
     uint16_t index_register;
     uint8_t stack_pointer;
-    
 
     uint8_t timer_delay;
     uint8_t sound_delay;
 
     std::array<uint8_t, 16> registers;
-    
 };
 #endif
