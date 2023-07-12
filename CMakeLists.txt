@@ -1,6 +1,8 @@
-cmake_minimum_required(VERSION 3.6.10)
+cmake_minimum_required(VERSION 3.26)
 
-project(chip-8)
+project(chip8)
 add_subdirectory(src)
-SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+
+find_file(SDL2_INCLUDE_DIR NAME SDL.h HINTS SDL2)
+find_library(SDL2_LIBRARY NAME SDL2)
 
