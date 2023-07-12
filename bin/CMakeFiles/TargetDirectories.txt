@@ -1,5 +1,0 @@
-/home/zeno/projects/chip-8/bin/CMakeFiles/rebuild_cache.dir
-/home/zeno/projects/chip-8/bin/CMakeFiles/edit_cache.dir
-/home/zeno/projects/chip-8/bin/src/CMakeFiles/rebuild_cache.dir
-/home/zeno/projects/chip-8/bin/src/CMakeFiles/edit_cache.dir
-/home/zeno/projects/chip-8/bin/src/CMakeFiles/chip8.dir
