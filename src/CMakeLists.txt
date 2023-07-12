@@ -5,9 +5,13 @@ target_sources(chip8
         chip8.cc 
         main.cc
         instructions.cc
+        emulator.cc
+        display.cc
         include/instructions.h
         include/chip8.h
         include/nums.h
+        include/display.h
+        include/emulator.h
 )
 
 target_include_directories(chip8 PUBLIC ${SDL2_INCLUDE_DIR})
