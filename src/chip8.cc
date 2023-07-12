@@ -343,11 +343,3 @@ void Chip8::ld_vx_i(Chip8& c8, const OpcodeFields& fields) {
     }
 }
 
-void Chip8::test() {
-    std::cout << '\n';
-    for (auto& byte : memory) {
-        std::cout << std::hex << static_cast<u16>(byte);
-    }
-    std::cout << '\n';
-}
-

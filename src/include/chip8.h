@@ -52,7 +52,6 @@ class Chip8 {
 
     void load_font();
     void load_program(const std::string& rom_path);
-    void test();
 
     static void cls(Chip8& c8, const OpcodeFields& fields);
     static void ret(Chip8& c8, const OpcodeFields& fields);
