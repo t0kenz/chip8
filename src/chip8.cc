@@ -1,7 +1,5 @@
-#include <algorithm>
-#include <fstream>
-#include <iterator>
 #include <string>
+#include <fstream>
 #include <cassert>
 
 #include "include/chip8.h"
