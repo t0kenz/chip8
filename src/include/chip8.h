@@ -7,9 +7,9 @@
 #include <unordered_map>
 #include <random>
 #include "nums.h"
+#include "keyboard.h"
 
 struct OpcodeFields;
-class Keyboard;
 class Chip8;
 
 using CallBack = void(*)(Chip8&, const OpcodeFields& fields);
@@ -101,8 +101,8 @@ class Chip8 {
     u16 index_register;
     u8 stack_pointer = 0;
 
-    u8 sound_delay;
-    u8 timer_delay;
+    u8 sound_delay{};
+    u8 timer_delay{};
 
     std::mt19937 rnd{};
     

@@ -3,7 +3,6 @@
 #include <cassert>
 
 #include "include/chip8.h"
-#include "include/keyboard.h"
 //#define Debug
 
 u16 Chip8::fetch_opcode() const {
