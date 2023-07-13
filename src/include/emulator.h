@@ -11,7 +11,7 @@ class Emulator {
     Emulator(const Emulator&) = delete;
     Emulator& operator=(const Emulator&) = delete;
 
-    explicit Emulator(Chip8& c8, Keyboard& keyboard) : keyboard(keyboard), chip8(c8){};
+    Emulator(Chip8& c8, Keyboard& keyboard) : keyboard(keyboard), chip8(c8){};
         
     void run(Display& display);
   private:
